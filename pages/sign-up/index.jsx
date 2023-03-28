@@ -9,20 +9,7 @@ import styles from "./Signup.module.css";
 import TextInput from "@/components/TextInput";
 import AntSwitch from "@/components/AntSwitch";
 import Link from "next/link";
-
-const HeaderMenuItems = [
-  { label: "DASHBOARD", imgFile: "Box.svg" },
-  { label: "PROFILE", imgFile: "User.svg" },
-  { label: "SIGN UP", imgFile: "UserCircle.svg" },
-  { label: "SIGN IN", imgFile: "Key.svg" },
-];
-
-const FooterMenuItems = [
-  { label: "About Us" },
-  { label: "Privacy" },
-  { label: "Blog" },
-  { label: "License" },
-];
+import { FooterMenuItems, HeaderMenuItems } from "@/util/options";
 
 const SignUpScreen = () => {
   return (
@@ -42,7 +29,7 @@ const SignUpScreen = () => {
                   src={`/assets/sign-up/${menu.imgFile}`}
                   width="11"
                   height="11"
-                  alt="Dashboard"
+                  alt={menu.label}
                 />
                 <Typography fontSize="10px" fontWeight={700} paddingLeft="4px">
                   {menu.label}
