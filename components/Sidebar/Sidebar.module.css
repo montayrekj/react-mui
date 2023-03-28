@@ -1,0 +1,32 @@
+.sidebarContainer {
+  width: 246.5px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.needHelp {
+  width: 212px;
+  height: 153.5px;
+  background: url("/assets/dashboard/need-help-bg.png");
+  background-size: cover;
+  margin-top: 70px;
+  padding: 16px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.documentationBtn {
+  border-radius: 12px;
+  background: #fff;
+  font-size: 10px;
+  color: #000;
+  width: 100%;
+  height: 35px;
+  color: #2d3748;
+  font-weight: 700;
+  box-shadow: none;
+}

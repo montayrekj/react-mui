@@ -1,0 +1,21 @@
+.mainContainer {
+  padding: 22.5px 22px 0px 18px;
+  display: flex;
+  background: #f8f9fa;
+  height: 100vh;
+}
+
+.footerContainer {
+  margin: 25px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.footerMenuContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 313.5px;
+}
