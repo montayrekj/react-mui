@@ -1,0 +1,102 @@
+.mainContainer {
+  padding: 24px 24px;
+}
+
+.heroContainer {
+  background: url("/assets/sign-up/header-bg.png");
+  max-width: 100%;
+  height: 520.5px;
+  border-radius: 25px;
+  background-size: cover;
+}
+
+.headerContainer {
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.downloadBtn {
+  border-radius: 34.5px;
+  background: #fff;
+  font-size: 10px;
+  color: #000;
+  width: 150px;
+  height: 35px;
+}
+
+.button:hover {
+  background: #eee;
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  color: white;
+  font-size: 10px;
+}
+
+.signupContainer {
+  margin-top: 66.5px;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45.5px 51px 45.5px 51.5px;
+  box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.05);
+  margin-top: -225px;
+  margin-bottom: 65.5px;
+}
+
+.socialMediaContainer {
+  display: flex;
+  margin-top: 22px;
+}
+
+.socialMediaIcon {
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  margin: 0px 7.5px;
+  cursor: pointer;
+}
+
+.socialMediaIcon:hover {
+  border-color: #ccc;
+}
+
+.signupBtn {
+  border-radius: 12px;
+  background: #4fd1c5;
+  font-size: 10px;
+  color: #000;
+  width: 100%;
+  height: 45px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.signupBtn:hover {
+  background: #58dcd0;
+}
+
+.footerContainer {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerMenuContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 313.5px;
+}
