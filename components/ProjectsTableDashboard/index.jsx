@@ -1,11 +1,11 @@
-import { MoreVert } from "@mui/icons-material";
+import { CheckCircle, MoreVert } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import LinearProgressWithLabel from "../LinearProgressWithLabel";
 import TableComponent from "../Table";
 
-const ProjectsTable = () => {
+const ProjectsTableDashboard = () => {
   const renderHead = (label) => (
     <Typography fontSize="10px" fontWeight={700} color="#A0AEC0">
       {label}
@@ -20,7 +20,7 @@ const ProjectsTable = () => {
     {
       field: "company",
       headerName: "COMPANIES",
-      width: 500,
+      width: 300,
       sortable: false,
       renderHeader: (params) => renderHead(params.colDef.headerName),
       renderCell: (params) => {
@@ -44,9 +44,33 @@ const ProjectsTable = () => {
       },
     },
     {
+      field: "members",
+      headerName: "MEMBERS",
+      width: 220,
+      renderHeader: (params) => renderHead(params.colDef.headerName),
+      sortable: false,
+      renderCell: (params) => {
+        const members = params.row.members;
+        return members.map((member, idx) => (
+          <Image
+            key={member.name}
+            src="/assets/dashboard/avatar.png"
+            alt={member.name}
+            height="30"
+            width="30"
+            style={{
+              border: "3px solid white",
+              borderRadius: "30px",
+              transform: `translateX(-${idx * 10}px)`,
+            }}
+          />
+        ));
+      },
+    },
+    {
       field: "budget",
       headerName: "BUDGET",
-      width: 220,
+      width: 120,
       renderHeader: (params) => renderHead(params.colDef.headerName),
       sortable: false,
       renderCell: (params) => {
@@ -55,20 +79,9 @@ const ProjectsTable = () => {
       },
     },
     {
-      field: "status",
-      headerName: "STATUS",
-      width: 220,
-      renderHeader: (params) => renderHead(params.colDef.headerName),
-      sortable: false,
-      renderCell: (params) => {
-        const status = params.row.status;
-        return renderColumn(status);
-      },
-    },
-    {
       field: "completion",
       headerName: "COMPLETION",
-      width: 180,
+      width: 120,
       renderHeader: (params) => renderHead(params.colDef.headerName),
       sortable: false,
       renderCell: (params) => {
@@ -80,13 +93,6 @@ const ProjectsTable = () => {
         );
       },
     },
-    {
-      field: "edit",
-      headerName: "",
-      renderCell: () => {
-        return <MoreVert sx={{ color: "#A0AEC0" }} />;
-      },
-    },
   ];
 
   const rows = [
@@ -96,6 +102,23 @@ const ProjectsTable = () => {
         img: "/assets/xd.png",
         name: "Software Import/Export",
       },
+      members: [
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+      ],
       budget: "$14,000",
       status: "Working",
       completion: "60",
@@ -106,6 +129,14 @@ const ProjectsTable = () => {
         img: "/assets/atlassian.png",
         name: "Add Progress Track",
       },
+      members: [
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+      ],
       budget: "$3,000",
       status: "Cancelled",
       completion: "10",
@@ -116,6 +147,14 @@ const ProjectsTable = () => {
         img: "/assets/slack.png",
         name: "Fix Platform Errors",
       },
+      members: [
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+      ],
       budget: "Not set",
       status: "Done",
       completion: "100",
@@ -126,6 +165,20 @@ const ProjectsTable = () => {
         img: "/assets/spotify.png",
         name: "Launch our Mobile App",
       },
+      members: [
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+      ],
       budget: "$32,000",
       status: "Done",
       completion: "100",
@@ -136,22 +189,57 @@ const ProjectsTable = () => {
         img: "/assets/jira.png",
         name: "Add the New Pricing Page",
       },
+      members: [
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+      ],
       budget: "$400",
       status: "Working",
       completion: "25",
+    },
+    {
+      id: 6,
+      company: {
+        img: "/assets/invision.png",
+        name: "Redesign New Online Shop",
+      },
+      members: [
+        {
+          name: "Annie Tiscur",
+        },
+        {
+          name: "Annie Tiscur",
+        },
+      ],
+      budget: "$7,600",
+      status: "Working",
+      completion: "40",
     },
   ];
 
   return (
     <div
       style={{
-        height: "50%",
+        flex: 1,
+        minHeight: "528px",
         background: "white",
         borderRadius: "15px",
         padding: "10px 18px",
         marginTop: "25px",
         boxShadow: "0px 3.5px 5.5px rgba(0, 0, 0, 0.02)",
-        flex: 2,
       }}
     >
       <Typography
@@ -162,9 +250,27 @@ const ProjectsTable = () => {
       >
         Projects
       </Typography>
-      <TableComponent columns={columns} rows={rows} />
+      <div
+        style={{
+          display: "flex",
+          fontSize: "18px",
+          alignItems: "center",
+          marginTop: "8px",
+        }}
+      >
+        <CheckCircle sx={{ color: "#68D391" }} />
+        <Typography
+          fontSize="14px"
+          color="#A0AEC0"
+          fontWeight={700}
+          marginLeft="5px"
+        >
+          30 done <span style={{ fontWeight: 400 }}>this month</span>
+        </Typography>
+      </div>
+      <TableComponent columns={columns} rows={rows} getRowHeight={() => 70} />
     </div>
   );
 };
 
-export default ProjectsTable;
+export default ProjectsTableDashboard;

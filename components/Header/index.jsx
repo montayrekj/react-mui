@@ -2,6 +2,7 @@ import React from "react";
 import { Notifications, Person, Settings } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import styles from "./Header.module.css";
+import Link from "next/link";
 
 const Header = ({ current }) => (
   <div className={styles.headerContainer}>
@@ -22,27 +23,35 @@ const Header = ({ current }) => (
         {current}
       </Typography>
     </div>
-    <div style={{ display: "flex" }}>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          height: "fit-content",
-          margin: "0px 19px",
-        }}
-      >
-        <Person sx={{ color: "#718096" }} />
-        <Typography
-          fontSize="12px"
-          fontWeight={700}
-          color="#718096"
-          marginLeft="5px"
-        >
-          Sign In
-        </Typography>
-      </div>
-      <Settings sx={{ color: "#718096" }} />
-      <Notifications sx={{ color: "#718096" }} />
+    <div
+      style={{ display: "flex", alignItems: "center", height: "fit-content" }}
+    >
+      <Link href="/" passHref legacyBehavior>
+        <a style={{ textDecoration: "none" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              height: "fit-content",
+              margin: "0px 19px",
+            }}
+          >
+            <Person sx={{ color: "#718096" }} />
+            <Typography
+              fontSize="12px"
+              fontWeight={700}
+              color="#718096"
+              marginLeft="5px"
+            >
+              Sign In
+            </Typography>
+          </div>
+        </a>
+      </Link>
+      <Settings
+        sx={{ color: "#718096", fontSize: "18px", marginRight: "19px" }}
+      />
+      <Notifications sx={{ color: "#718096", fontSize: "18px" }} />
     </div>
   </div>
 );

@@ -20,18 +20,31 @@ export default function Home() {
         />
         <div className={styles.menuContainer}>
           {HeaderMenuItems.map((menu) => (
-            <div key={menu.label} className={styles.menu}>
-              <Image
-                src={`/assets/sign-up/${menu.imgFile}`}
-                width="11"
-                height="11"
-                alt={menu.label}
-                style={{ filter: "invert(100%)" }}
-              />
-              <Typography fontSize="10px" fontWeight={700} paddingLeft="4px">
-                {menu.label}
-              </Typography>
-            </div>
+            <Link
+              key={menu.label}
+              href={menu?.url ?? "/sign-up"}
+              passHref
+              legacyBehavior
+            >
+              <a>
+                <div key={menu.label} className={styles.menu}>
+                  <Image
+                    src={`/assets/sign-up/${menu.imgFile}`}
+                    width="11"
+                    height="11"
+                    alt={menu.label}
+                    style={{ filter: "invert(100%)" }}
+                  />
+                  <Typography
+                    fontSize="10px"
+                    fontWeight={700}
+                    paddingLeft="4px"
+                  >
+                    {menu.label}
+                  </Typography>
+                </div>
+              </a>
+            </Link>
           ))}
         </div>
         <Button variant="contained" color="info" className={styles.downloadBtn}>
@@ -80,7 +93,7 @@ export default function Home() {
               Remember me
             </Typography>
           </div>
-          <Button className={styles.signupBtn}>SIGN UP</Button>
+          <Button className={styles.signupBtn}>SIGN IN</Button>
           <div
             style={{
               display: "flex",

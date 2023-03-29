@@ -206,6 +206,7 @@ const AuthorsTable = () => {
         borderRadius: "15px",
         padding: "10px 18px",
         marginTop: "25px",
+        boxShadow: "0px 3.5px 5.5px rgba(0, 0, 0, 0.02)",
       }}
     >
       <Typography

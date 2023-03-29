@@ -24,17 +24,30 @@ const SignUpScreen = () => {
           />
           <div className={styles.menuContainer}>
             {HeaderMenuItems.map((menu) => (
-              <div key={menu.label} className={styles.menu}>
-                <Image
-                  src={`/assets/sign-up/${menu.imgFile}`}
-                  width="11"
-                  height="11"
-                  alt={menu.label}
-                />
-                <Typography fontSize="10px" fontWeight={700} paddingLeft="4px">
-                  {menu.label}
-                </Typography>
-              </div>
+              <Link
+                key={menu.label}
+                href={menu?.url ?? "/sign-up"}
+                passHref
+                legacyBehavior
+              >
+                <a>
+                  <div className={styles.menu}>
+                    <Image
+                      src={`/assets/sign-up/${menu.imgFile}`}
+                      width="11"
+                      height="11"
+                      alt={menu.label}
+                    />
+                    <Typography
+                      fontSize="10px"
+                      fontWeight={700}
+                      paddingLeft="4px"
+                    >
+                      {menu.label}
+                    </Typography>
+                  </div>
+                </a>
+              </Link>
             ))}
           </div>
           <Button

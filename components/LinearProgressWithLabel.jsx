@@ -20,6 +20,7 @@ const LinearProgressWithLabel = (props) => {
             "& .MuiLinearProgress-bar": {
               backgroundColor: "#4FD1C5",
             },
+            borderRadius: "10px",
           }}
           {...props}
         />
